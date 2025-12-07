@@ -15,8 +15,9 @@
     font-weight: 500;
     text-decoration: none;
     cursor: pointer;
-    transition: $transition;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
     font-size: 1rem;
+    will-change: transform;
 }
 
 .btn-primary {
@@ -29,7 +30,6 @@
         background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%) !important;
         color: #1a1a1a !important;
         transform: translateY(-2px);
-        box-shadow: $shadow-lg;
     }
 }
 
@@ -39,6 +39,8 @@
     color: $white;
     border: 2px solid $glass-border;
     box-shadow: $shadow-md;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    will-change: transform, opacity;
 
     &:hover {
         background: $glass-bg-hover;

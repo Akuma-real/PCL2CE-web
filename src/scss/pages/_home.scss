@@ -109,11 +109,12 @@
     overflow: hidden;
     box-shadow: $glass-shadow-hover;
     transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
-    transition: box-shadow 0.3s ease, transform 0.05s ease-out;
+    transition: transform 0.05s ease-out;
     cursor: pointer;
     border: 2px solid $glass-border;
     background: $glass-bg;
     backdrop-filter: $glass-blur;
+    will-change: transform;
 
     &:hover {
         transform: perspective(1000px) rotateY(-2deg) rotateX(2deg);
@@ -207,11 +208,11 @@
     border: 1px solid $glass-border;
     border-radius: $border-radius-lg;
     padding: 2rem;
-    transition: $transition;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     box-shadow: $glass-shadow;
-    animation: fadeInUp 0.6s ease-out;
+    will-change: transform;
 
     &::before {
         content: '';
@@ -223,7 +224,7 @@
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.08) 100%);
         pointer-events: none;
         opacity: 0;
-        transition: $transition;
+        transition: opacity 0.3s ease;
     }
 
     &:hover {
@@ -238,8 +239,6 @@
 
         .feature-icon {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: $glass-shadow-hover;
-            border-color: $glass-border-hover;
         }
     }
 
@@ -270,9 +269,10 @@
     border: 2px solid $glass-border;
     box-shadow: $glass-shadow;
     backdrop-filter: $glass-blur;
-    transition: $transition;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    will-change: transform;
 
     &::before {
         content: '';
