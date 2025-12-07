@@ -22,7 +22,7 @@ import { initDontClickButton } from './easter-egg.js';
 import i18n from './i18n.js';
 
 // 构建时间 - 由 Vite 在构建时注入
-// eslint-disable-next-line no-undef
+
 const buildTime = typeof BUILD_TIME !== 'undefined' ? BUILD_TIME : new Date().toISOString();
 
 /**

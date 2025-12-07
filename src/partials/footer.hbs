@@ -3,7 +3,10 @@
         <div class="footer-content {{#if animateFooter}}animate-fade-in{{/if}}">
             <div class="footer-section {{#if animateFooter}}animate-slide-up animate-delay-1{{/if}}">
                 <div class="footer-brand">
-                    <img src="/assets/images/logo.ico" alt="PCL Logo" class="footer-logo">
+                    <picture>
+                        <source srcset="/assets/images/logo.webp" type="image/webp">
+                        <img src="/assets/images/logo.ico" alt="PCL Logo" class="footer-logo" width="48" height="48">
+                    </picture>
                     <div class="brand-info">
                         <h3 data-i18n="footer.brand">PCL 社区版</h3>
                         <p data-i18n="footer.tagline">开源免费的 Minecraft 启动器</p>

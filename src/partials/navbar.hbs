@@ -2,7 +2,10 @@
     <div class="nav-container">
         <div class="nav-brand {{#if animateNavbar}}animate-fade-in animate-delay-1{{/if}}">
             <a href="{{#if isSubPage}}/{{else}}#home{{/if}}" class="brand-link">
-                <img src="/assets/images/logo.ico" alt="PCL Logo" class="logo">
+                <picture>
+                    <source srcset="/assets/images/logo.webp" type="image/webp">
+                    <img src="/assets/images/logo.ico" alt="PCL Logo" class="logo" width="40" height="40">
+                </picture>
                 <span class="brand-text" data-i18n="brand.name">PCL 社区版</span>
             </a>
         </div>
