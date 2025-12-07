@@ -1,0 +1,24 @@
+{
+    "name": "pcl2ce-web",
+    "version": "1.0.0",
+    "description": "PCL 社区版官网 - 开源免费的 Minecraft 启动器",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "keywords": [
+        "pcl",
+        "minecraft",
+        "launcher"
+    ],
+    "author": "PCL Community",
+    "license": "MIT",
+    "devDependencies": {
+        "sass": "^1.94.2",
+        "sass-embedded": "^1.93.3",
+        "vite": "^7.2.6",
+        "vite-plugin-handlebars": "^2.0.0"
+    }
+}

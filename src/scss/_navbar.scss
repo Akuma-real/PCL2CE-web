@@ -1,0 +1,587 @@
+// ==========================================================================
+// Navbar - 导航栏样式
+// ==========================================================================
+
+@use 'variables' as *;
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: $glass-bg;
+    backdrop-filter: $glass-blur-strong;
+    border-bottom: 1px solid $glass-border;
+    box-shadow: $glass-shadow;
+    transition: $transition;
+
+    &:hover {
+        background: $glass-bg-hover;
+        border-bottom-color: $glass-border-hover;
+    }
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: $white;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: $white;
+    border-radius: $border-radius;
+    transition: $transition;
+    padding: 0.5rem 0.75rem;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-1px);
+    }
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: $border-radius;
+    transition: $transition;
+}
+
+.brand-text {
+    font-family: $font-chinese;
+    font-size: 1.25rem;
+    font-weight: 900;
+    transition: $transition;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 500;
+    transition: $transition;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+// 语言切换器
+.language-selector {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.language-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: $glass-bg;
+    backdrop-filter: $glass-blur;
+    border: 1px solid $glass-border;
+    border-radius: $border-radius;
+    padding: 0.5rem 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: $transition;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    &:hover {
+        background: $glass-bg-hover;
+        border-color: $glass-border-hover;
+        color: $white;
+        transform: translateY(-1px);
+    }
+
+    .chevron {
+        transition: transform 0.2s ease;
+    }
+
+    &.active .chevron {
+        transform: rotate(180deg);
+    }
+}
+
+.language-dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background: $glass-bg;
+    backdrop-filter: $glass-blur-strong;
+    border: 1px solid $glass-border;
+    border-radius: $border-radius;
+    box-shadow: $glass-shadow;
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    z-index: 1000;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: $transition;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &:hover {
+        background: $glass-bg-hover;
+        color: $white;
+    }
+
+    &.active {
+        background: $primary;
+        color: $white;
+    }
+}
+
+.lang-flag {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+// 旧版语言切换样式（用于保持兼容）
+.lang-switch {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: $border-radius;
+    transition: $transition;
+    font-size: 14px;
+    background: $glass-bg;
+    backdrop-filter: $glass-blur;
+    border: 1px solid $glass-border;
+    box-shadow: $glass-shadow;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.08) 100%);
+        pointer-events: none;
+        opacity: 0;
+        transition: $transition;
+    }
+
+    &:hover {
+        background: $glass-bg-hover;
+        border-color: $glass-border-hover;
+        color: $white;
+        transform: translateY(-2px);
+        box-shadow: $glass-shadow-hover;
+
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &.active {
+        background: $primary;
+        color: $white;
+        font-weight: bold;
+        border-color: $primary;
+        box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+    }
+}
+
+// GitHub 链接
+.github-link {
+    background: $glass-bg;
+    backdrop-filter: $glass-blur;
+    padding: 0.5rem 1rem;
+    border-radius: $border-radius;
+    border: 1px solid $glass-border;
+    box-shadow: $shadow-md;
+    transition: $transition;
+
+    &:hover {
+        background: $glass-bg-hover;
+        border-color: $glass-border-hover;
+        color: $white;
+        box-shadow: $glass-shadow;
+        transform: translateY(-1px);
+    }
+}
+
+// 移动端菜单按钮
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: $glass-bg;
+    backdrop-filter: $glass-blur;
+    border: 1px solid $glass-border;
+    border-radius: $border-radius;
+    cursor: pointer;
+    padding: 0.75rem;
+    box-shadow: $shadow-md;
+    transition: $transition;
+
+    &:hover {
+        background: $glass-bg-hover;
+        border-color: $glass-border-hover;
+        box-shadow: $glass-shadow;
+        transform: translateY(-1px);
+    }
+
+    span {
+        width: 28px;
+        height: 3px;
+        background: $white;
+        margin: 4px 0;
+        transition: $transition;
+        border-radius: 2px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    &.active {
+        span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        span:nth-child(2) {
+            opacity: 0;
+        }
+
+        span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+    }
+}
+
+// 移动端响应式
+@media (max-width: $breakpoint-md) {
+    .menu-toggle {
+        display: flex !important;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 10001;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        border: none;
+        box-shadow: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 10000;
+        padding: 2rem;
+        box-sizing: border-box;
+        overflow-y: auto;
+        display: flex;
+
+        &.active {
+            transform: translateX(0);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(46, 204, 113, 0.05) 0%, rgba(52, 152, 219, 0.05) 100%);
+            pointer-events: none;
+        }
+
+        .nav-link {
+            font-size: 1.8rem;
+            color: #333;
+            text-align: center;
+            padding: 1.5rem 2rem;
+            border-radius: 1rem;
+            transition: $transition;
+            width: 90%;
+            max-width: 400px;
+            box-sizing: border-box;
+            position: relative;
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.05);
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            margin: 0.5rem 0;
+
+            &:nth-child(1) {
+                order: 1;
+            }
+
+            &:nth-child(2) {
+                order: 2;
+            }
+
+            &:nth-child(3) {
+                order: 3;
+            }
+
+            &:nth-child(4) {
+                order: 4;
+            }
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.1);
+                border: 2px solid rgba(0, 0, 0, 0.2);
+                color: #000;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            }
+        }
+
+        .github-link {
+            background: rgba(0, 0, 0, 0.05);
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 400px;
+            justify-content: center;
+            gap: 0.75rem;
+            color: #333;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+            order: 10;
+            display: flex;
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+
+            svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.1);
+                border: 2px solid rgba(0, 0, 0, 0.2);
+                color: #000;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                transform: translateY(-2px);
+            }
+        }
+
+        // 移动端语言切换器
+        .language-selector {
+            width: 90%;
+            max-width: 400px;
+            padding: 0;
+            background: rgba(0, 0, 0, 0.05);
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            order: 9;
+            margin: 0.5rem 0;
+        }
+
+        .language-toggle {
+            width: 100%;
+            justify-content: center;
+            font-size: 1.4rem;
+            padding: 1.5rem;
+            background: transparent;
+            border: none;
+            text-align: center;
+            color: #333;
+            position: relative;
+            backdrop-filter: none;
+            box-shadow: none;
+            font-weight: 600;
+            border-radius: 1rem;
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.1);
+                color: #000;
+                box-shadow: none;
+                transform: none;
+            }
+        }
+
+        .language-dropdown {
+            position: static;
+            width: 100%;
+            margin: 0.5rem 0 0 0;
+            border-radius: 1rem;
+            max-height: none;
+            opacity: 1;
+            visibility: visible;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transform: none;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            &.show {
+                display: flex;
+            }
+
+            &:not(.show) {
+                display: none;
+            }
+        }
+
+        .language-option {
+            font-size: 1.1rem;
+            padding: 1rem;
+            justify-content: center;
+            color: #333;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 0.8rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            transition: $transition;
+            background: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.1);
+                color: #000;
+                transform: translateY(-1px);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                border: 1px solid rgba(0, 0, 0, 0.2);
+            }
+
+            &.active {
+                color: #000;
+                background: rgba(0, 0, 0, 0.15);
+                border: 2px solid rgba(0, 0, 0, 0.3);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+                font-weight: 600;
+            }
+        }
+    }
+
+    .nav-container {
+        padding: 1rem 15px;
+    }
+}
+
+// 大屏幕优化
+@media (min-width: $breakpoint-xl) {
+    .nav-container {
+        max-width: 1400px;
+    }
+}
+
+@media (min-width: $breakpoint-xxl) {
+    .nav-container {
+        max-width: 1600px;
+    }
+}
+
+@media (min-width: $breakpoint-xxxl) {
+    .nav-container {
+        max-width: 1800px;
+    }
+}
+
+// 浅色主题
+[data-theme="light"] {
+    .lang-switch {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #1e293b;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+        &::before {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.05) 100%);
+        }
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(52, 152, 219, 0.3);
+            color: $primary;
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.15);
+        }
+
+        &.active {
+            background: $primary;
+            color: $white;
+            border-color: $primary;
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+        }
+    }
+
+    @media (max-width: $breakpoint-md) {
+        .nav-menu {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(30px) saturate(200%) brightness(1.05);
+            -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(1.05);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border-left: 1px solid rgba(0, 0, 0, 0.08);
+            border-right: 1px solid rgba(0, 0, 0, 0.03);
+
+            .nav-link {
+                color: #1e293b;
+
+                &:hover {
+                    background: rgba(52, 152, 219, 0.1);
+                    color: $primary;
+                }
+            }
+        }
+    }
+}

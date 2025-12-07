@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark" data-title-key="hero.title">
+
+<head>
+    {{> head}}
+    <title>PCL 社区版 | 开源免费的Minecraft启动器</title>
+    <meta name="description" content="PCL 社区版是基于龙腾猫跃 PCL2 构建的开源免费 Minecraft 启动器，支持智能崩溃分析、多文件夹管理、模组下载等功能，为玩家提供最佳游戏体验。">
+    <meta name="keywords" content="PCL,PCL2,Minecraft,启动器,我的世界,开源,免费,模组,Java">
+    <meta property="og:title" content="PCL 社区版 | 开源免费的Minecraft启动器">
+    <meta property="og:description" content="基于龙腾猫跃 PCL2 构建的开源免费 Minecraft 启动器，支持智能崩溃分析、多文件夹管理等功能。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.pclc.cc/">
+    <link rel="canonical" href="https://www.pclc.cc/">
+    <link rel="stylesheet" href="/scss/main.scss">
+    <script type="module" src="/js/main.js"></script>
+</head>
+
+<body>
+    {{> navbar animateNavbar=true}}
+
+    <main id="main-content">
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text animate-slide-left">
+                    <h1 class="hero-title animate-fade-in">
+                        <span class="title-main" data-i18n="hero.title">PCL 社区版</span>
+                        <span class="title-sub" data-i18n="hero.subtitle">开源免费的 Minecraft 启动器</span>
+                    </h1>
+                    <p class="hero-description animate-fade-in animate-delay-1" data-i18n="hero.description">
+                        基于龙腾猫跃 PCL2 构建的社区版本，提供更强大的功能和更好的用户体验。
+                        支持智能崩溃分析、多文件夹管理、直接下载光影和材质包等特色功能。
+                    </p>
+                    <div class="hero-buttons animate-slide-up animate-delay-2">
+                        <a href="/dl.html" class="btn btn-primary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                            <span data-i18n="hero.download">下载最新版</span>
+                        </a>
+                        <a href="/download.html" class="btn btn-secondary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="3" />
+                                <path d="M12 1v6m0 6v6" />
+                                <path d="m21 12-6-6-6 6-6-6" />
+                            </svg>
+                            <span data-i18n="hero.history">历史版本</span>
+                        </a>
+                        <button id="dontClickBtn" class="btn btn-danger">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                                <line x1="12" y1="9" x2="12" y2="13" />
+                                <line x1="12" y1="17" x2="12.01" y2="17" />
+                            </svg>
+                            <span data-i18n="dont.click">千万别点</span>
+                        </button>
+                    </div>
+                    <div class="hero-stats animate-fade-in animate-delay-3">
+                        <div class="stat animate-scale-in animate-delay-4">
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label" data-i18n="stats.users">活跃用户</span>
+                        </div>
+                        <div class="stat animate-scale-in animate-delay-5">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label" data-i18n="stats.opensource">开源免费</span>
+                        </div>
+                        <div class="stat animate-scale-in animate-delay-6">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label" data-i18n="stats.community">社区支持</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual animate-slide-right animate-delay-1">
+                    <div class="hero-image-container animate-scale-in animate-delay-2" data-cursor-effect>
+                        <img src="/assets/images/f1.png" alt="PCL 界面预览" class="hero-image">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section animate-on-scroll">
+            <div class="container">
+                <div class="section-header animate-fade-in">
+                    <h2 data-i18n="demo.title">PCL 社区版演示视频</h2>
+                    <p data-i18n="demo.description">观看视频了解 PCL 社区版的强大功能</p>
+                </div>
+                <div class="video-container animate-scale-in animate-delay-1">
+                    <iframe id="bili-video"
+                        src="https://player.bilibili.com/player.html?aid=113865304048458&bvid=BV1w5wheQEAy&cid=28195815657&p=1&autoplay=0&mobi=1&high_quality=1&as_wide=1&danmaku=0&isOutside=true&noReffer=true"
+                        frameborder="0" allow="autoplay; fullscreen"
+                        sandbox="allow-scripts allow-same-origin allow-popups allow-presentation">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section animate-on-scroll">
+            <div class="container">
+                <div class="section-header animate-fade-in">
+                    <h2 data-i18n="features.title">核心功能</h2>
+                    <p data-i18n="features.description">为 Minecraft 玩家量身打造的专业启动器</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card animate-slide-up animate-delay-1">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                            </svg>
+                        </div>
+                        <h3 data-i18n="features.crash.title">智能崩溃分析</h3>
+                        <p data-i18n="features.crash.description">自动检测并分析游戏崩溃原因，提供详细的解决方案和建议，让你快速解决问题。</p>
+                        <ul class="feature-list">
+                            <li data-i18n="features.crash.item1">自动日志分析</li>
+                            <li data-i18n="features.crash.item2">智能错误诊断</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card animate-slide-up animate-delay-2">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                            </svg>
+                        </div>
+                        <h3 data-i18n="features.folder.title">多文件夹管理</h3>
+                        <p data-i18n="features.folder.description">支持多个游戏实例管理，不同版本、不同模组包完全隔离，轻松切换游戏环境。</p>
+                        <ul class="feature-list">
+                            <li data-i18n="features.folder.item1">独立游戏实例</li>
+                            <li data-i18n="features.folder.item2">版本隔离管理</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card animate-slide-up animate-delay-3">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                        </div>
+                        <h3 data-i18n="features.download.title">资源直接下载</h3>
+                        <p data-i18n="features.download.description">内置资源商店，支持直接下载光影、材质包、模组等资源，无需手动安装。</p>
+                        <ul class="feature-list">
+                            <li data-i18n="features.download.item2">材质包管理</li>
+                            <li data-i18n="features.download.item3">模组一键安装</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card animate-slide-up animate-delay-4">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                        </div>
+                        <h3 data-i18n="features.account.title">多账号支持</h3>
+                        <p data-i18n="features.account.description">支持多个 Minecraft 账号管理，快速切换不同账号，支持正版和离线模式。</p>
+                        <ul class="feature-list">
+                            <li data-i18n="features.account.item1">多账号管理</li>
+                            <li data-i18n="features.account.item2">快速账号切换</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card animate-slide-up animate-delay-5">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                                <polyline points="2 17 12 22 22 17" />
+                                <polyline points="2 12 12 17 22 12" />
+                            </svg>
+                        </div>
+                        <h3 data-i18n="features.java.title">Java 版本管理</h3>
+                        <p data-i18n="features.java.description">自动检测和管理 Java 版本，为不同的 Minecraft 版本选择最适合的 Java 环境。</p>
+                        <ul class="feature-list">
+                            <li data-i18n="features.java.item1">自动 Java 检测</li>
+                            <li data-i18n="features.java.item2">版本智能匹配</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card animate-slide-up animate-delay-6">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+                            </svg>
+                        </div>
+                        <h3 data-i18n="features.opensource.title">开源免费</h3>
+                        <p data-i18n="features.opensource.description">完全开源的项目，永久免费使用，社区驱动开发，持续更新和改进。</p>
+                        <ul class="feature-list">
+                            <li data-i18n="features.opensource.item1">完全开源</li>
+                            <li data-i18n="features.opensource.item2">永久免费</li>
+                            <li data-i18n="features.opensource.item3">社区驱动</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="screenshots" class="screenshots-section animate-on-scroll">
+            <div class="container">
+                <div class="section-header animate-fade-in">
+                    <h2 data-i18n="screenshots.title">界面预览</h2>
+                    <p data-i18n="screenshots.description">直观了解 PCL 社区版的界面设计和功能布局</p>
+                </div>
+
+                <div class="screenshot-row animate-slide-left">
+                    <div class="screenshot-image animate-scale-in animate-delay-1">
+                        <img src="/assets/images/x1.png" alt="主界面" loading="lazy">
+                    </div>
+                    <div class="screenshot-content animate-slide-right animate-delay-2">
+                        <h3 data-i18n="screenshots.main.title">主界面</h3>
+                        <p data-i18n="screenshots.main.description">简洁直观的主界面设计，所有功能一目了然。支持深色主题切换，</p>
+                        <ul class="feature-highlights">
+                            <li data-i18n="screenshots.main.item2">直观的操作体验</li>
+                            <li data-i18n="screenshots.main.item3">支持深色主题切换</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="screenshot-row reverse animate-slide-right">
+                    <div class="screenshot-content animate-slide-left animate-delay-1">
+                        <h3 data-i18n="screenshots.version.title">版本管理</h3>
+                        <p data-i18n="screenshots.version.description">强大的版本管理功能，支持多个 Minecraft
+                            版本同时管理。自动下载和安装，版本切换只需一键操作。支持快照版本、正式版本以及各种模组版本。</p>
+                        <ul class="feature-highlights">
+                            <li data-i18n="screenshots.version.item1">多版本并存管理</li>
+                            <li data-i18n="screenshots.version.item2">自动下载安装和补全文件</li>
+                            <li data-i18n="screenshots.version.item3">一键版本切换</li>
+                        </ul>
+                    </div>
+                    <div class="screenshot-image animate-scale-in animate-delay-2">
+                        <img src="/assets/images/x2.png" alt="版本管理" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="screenshot-row animate-slide-left">
+                    <div class="screenshot-image animate-scale-in animate-delay-1">
+                        <img src="/assets/images/x3.png" alt="模组管理" loading="lazy">
+                    </div>
+                    <div class="screenshot-content animate-slide-right animate-delay-2">
+                        <h3 data-i18n="screenshots.mods.title">模组管理</h3>
+                        <p data-i18n="screenshots.mods.description">便捷的模组安装和管理系统，支持从多个来源下载模组。提供模组搜索功能，让您轻松找到心仪的模组。</p>
+                        <ul class="feature-highlights">
+                            <li data-i18n="screenshots.mods.item1">智能模组管理</li>
+                            <li data-i18n="screenshots.mods.item2">自动依赖检测</li>
+                            <li data-i18n="screenshots.mods.item4">模组搜索</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="download-section animate-on-scroll">
+            <div class="container">
+                <div class="download-content">
+                    <div class="download-text animate-slide-left">
+                        <h2 data-i18n="download.title" class="animate-fade-in">立即下载</h2>
+                        <p data-i18n="download.description" class="animate-fade-in animate-delay-1">开始你的 Minecraft
+                            之旅，体验最好用的启动器</p>
+                        <div class="download-buttons animate-slide-up animate-delay-2">
+                            <a href="/dl.html" class="btn btn-primary btn-large">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                <span data-i18n="download.latest">下载最新版</span>
+                            </a>
+                            <a href="/download.html" class="btn btn-outline btn-large">
+                                <span data-i18n="download.all_versions">查看所有版本</span>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="download-visual animate-slide-right animate-delay-1">
+                        <div class="download-card animate-scale-in animate-delay-3">
+                            <div class="card-header">
+                                <img src="/assets/images/logo.ico" alt="PCL Logo" class="card-logo">
+                                <div class="card-title">
+                                    <h3 data-i18n="download.card.title">PCL 社区版</h3>
+                                    <span data-i18n="download.card.subtitle">Community Edition</span>
+                                </div>
+                            </div>
+                            <div class="card-features">
+                                <div class="feature-tag" data-i18n="download.card.tag1">开源免费</div>
+                                <div class="feature-tag" data-i18n="download.card.tag2">智能管理</div>
+                                <div class="feature-tag" data-i18n="download.card.tag3">社区支持</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section animate-on-scroll">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text animate-slide-left">
+                        <div class="section-header animate-fade-in">
+                            <h2 data-i18n="about.title">关于 PCL 社区</h2>
+                            <p data-i18n="about.description">非官方的 PCL 社区玩家组织，不代表开发者龙腾猫跃和 PCL 官方。</p>
+                        </div>
+                        <div class="about-stats animate-slide-up animate-delay-1">
+                            <div class="stat-item animate-fade-in animate-delay-2">
+                                <div class="stat-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M9 11H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h4l3 3V8l-3 3z" />
+                                        <path d="M22 9a9 9 0 0 1-9 9" />
+                                        <path d="M22 9a5 5 0 0 1-5 5" />
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <h4 data-i18n="about.stat1.title">持续更新</h4>
+                                    <p data-i18n="about.stat1.description">定期发布新功能和修复</p>
+                                </div>
+                            </div>
+                            <div class="stat-item animate-fade-in animate-delay-3">
+                                <div class="stat-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <h4 data-i18n="about.stat2.title">安全可靠</h4>
+                                    <p data-i18n="about.stat2.description">开源透明，安全无忧</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-visual animate-slide-right animate-delay-1">
+                        <div class="about-image animate-scale-in animate-delay-2">
+                            <img src="/assets/images/pclce.png" alt="PCL Community" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {{> footer animateFooter=true}}
+
+</body>
+
+</html>

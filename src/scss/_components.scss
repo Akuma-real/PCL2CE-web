@@ -1,0 +1,165 @@
+// ==========================================================================
+// Components - 按钮、卡片、表单等可复用组件
+// ==========================================================================
+
+@use 'variables' as *;
+
+// 按钮基础样式
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: $border-radius;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: $transition;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%) !important;
+    color: #1a1a1a !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: $shadow-md;
+
+    &:hover {
+        background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%) !important;
+        color: #1a1a1a !important;
+        transform: translateY(-2px);
+        box-shadow: $shadow-lg;
+    }
+}
+
+.btn-secondary {
+    background: $glass-bg;
+    backdrop-filter: $glass-blur;
+    color: $white;
+    border: 2px solid $glass-border;
+    box-shadow: $shadow-md;
+
+    &:hover {
+        background: $glass-bg-hover;
+        border-color: $glass-border-hover;
+        box-shadow: $glass-shadow;
+        transform: translateY(-2px);
+    }
+}
+
+.btn-outline {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+
+    &:hover {
+        background: #ffffff !important;
+        color: #1a1a1a !important;
+    }
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: $white;
+    box-shadow: $shadow-md;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+        transform: translateY(-2px);
+        box-shadow: $shadow-lg;
+        animation: pulse 0.6s ease-in-out;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+    }
+}
+
+// 特性标签
+.feature-tag {
+    background: rgba(255, 255, 255, 0.2);
+    color: $white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+// 特性列表
+.feature-list {
+    list-style: none;
+
+    li {
+        padding: 0.5rem 0;
+        color: rgba(255, 255, 255, 0.7);
+        position: relative;
+        padding-left: 1.5rem;
+
+        &::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: $primary;
+            font-weight: bold;
+        }
+    }
+}
+
+.feature-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        color: rgba(255, 255, 255, 0.9);
+        padding: 0.5rem 0;
+        position: relative;
+        padding-left: 1.5rem;
+        font-size: 0.95rem;
+
+        &::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: $primary;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+// 分隔符
+.separator {
+    margin: 0 0.5rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+// 响应式按钮
+@media (max-width: $breakpoint-sm) {
+    .btn {
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+}
